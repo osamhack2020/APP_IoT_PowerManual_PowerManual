@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 //import '/workspaces/APP_IoT_PowerManual_PowerManual/myapp/lib/MenuRow.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
+import 'package:myapp/detail/bluetoothConnect.dart';
 import 'package:myapp/replace/page/replaceSquatsPage.dart';
 import '../youtubelink/SquatsStrechingYoutube.dart';
 import '../youtubelink/HowToSquatsYoutube.dart';
@@ -24,6 +25,8 @@ class _SquatsPage extends State<SquatsPage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
+      
       
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -64,6 +67,20 @@ class _SquatsPage extends State<SquatsPage>{
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
+      
+       
+        floatingActionButton: FloatingActionButton.extended(
+          onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => BTConnect(title: "test",)),
+            );
+          },
+          label: const Text(""),
+          icon: const Icon(Icons.bluetooth),
+          
+          ),
+      
     );
 }
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/detail/benchpressCard/BenchPressBeforeStart.dart';
 import 'package:myapp/detail/squatsCard/SquatsBeforeStart.dart';
+import 'alarmpage/alarmtest.dart';
 
 
 
@@ -479,7 +480,7 @@ class Alarmcard extends StatelessWidget{
       onTap:(){
         Navigator.push(
           context, 
-         MaterialPageRoute(builder: (context)=>SquatsPage()),
+         MaterialPageRoute(builder: (context)=>AlarmTest()),
          
         );
       }
