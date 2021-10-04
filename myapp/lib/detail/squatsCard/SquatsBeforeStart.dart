@@ -12,6 +12,7 @@ import 'package:myapp/detail/bluetoothConnect.dart';
 import 'package:myapp/replace/page/replaceSquatsPage.dart';
 import '../youtubelink/SquatsStrechingYoutube.dart';
 import '../youtubelink/HowToSquatsYoutube.dart';
+import 'package:myapp/exercise/squats/page/startSquats.dart';
 import 'SquatsDetail.dart';
 
 class SquatsPage extends StatefulWidget{
@@ -69,15 +70,15 @@ class _SquatsPage extends State<SquatsPage>{
       ),
       
        
-        floatingActionButton: FloatingActionButton.extended(
+        floatingActionButton: FloatingActionButton(
           onPressed: (){
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => BTConnect(title: "test",)),
+              MaterialPageRoute(builder: (context) => BTConnect(title: "Bluetooth Connect",)),
             );
           },
-          label: const Text(""),
-          icon: const Icon(Icons.bluetooth),
+          //label: const Text(""),
+          child: Icon(Icons.bluetooth),
           
           ),
       
@@ -90,9 +91,6 @@ List _widgetOptions = [
     HowtoSquatsYoutubePlayerDemo(title: "How to Squats"),
    
     replaceSquatsPage(),
-    Text(
-      'News',
-      style: TextStyle(fontSize: 30, fontFamily: 'DoHyeonRegular'),
-    ),
+    StartSquats(),
   ];
 }

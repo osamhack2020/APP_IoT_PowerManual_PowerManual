@@ -12,6 +12,8 @@ import 'package:myapp/replace/page/replaceBenchPressPage.dart';
 import '../youtubelink/BenchPressStrechingYoutube.dart';
 import '../youtubelink/HowToBenchPressYoutube.dart';
 import 'BenchPressDetail.dart';
+import 'package:myapp/detail/bluetoothConnect.dart';
+
 
 class BenchPressPage extends StatefulWidget{
   @override
@@ -64,6 +66,19 @@ class _BenchPressPage extends State<BenchPressPage>{
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
+
+      floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => BTConnect(title: "Bluetooth Connect",)),
+            );
+          },
+          //label: const Text(""),
+          child: Icon(Icons.bluetooth),
+          
+          ),
+
     );
 }
 
