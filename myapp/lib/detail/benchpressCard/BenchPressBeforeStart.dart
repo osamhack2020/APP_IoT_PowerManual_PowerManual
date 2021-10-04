@@ -8,11 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 //import '/workspaces/APP_IoT_PowerManual_PowerManual/myapp/lib/MenuRow.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
+import 'package:myapp/exercise/benchPress/page/startBenchPress.dart';
 import 'package:myapp/replace/page/replaceBenchPressPage.dart';
 import '../youtubelink/BenchPressStrechingYoutube.dart';
 import '../youtubelink/HowToBenchPressYoutube.dart';
 import 'BenchPressDetail.dart';
 import 'package:myapp/detail/bluetoothConnect.dart';
+import 'package:myapp/exercise/benchPress/page/startBenchPress.dart';
 
 
 class BenchPressPage extends StatefulWidget{
@@ -88,9 +90,6 @@ List _widgetOptions = [
     HowtoBenchPressYoutubePlayerDemo(title: "How to Bench Press"),
     replaceBenchPressPage(),
     
-    Text(
-      'News',
-      style: TextStyle(fontSize: 30, fontFamily: 'DoHyeonRegular'),
-    ),
+    StartBenchPress(),
   ];
 }

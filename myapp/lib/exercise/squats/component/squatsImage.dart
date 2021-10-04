@@ -17,10 +17,18 @@ class SquatsImage extends StatelessWidget{
     return new Container(
       child: Column(
         children: [
-          CircleAvatar(
-            radius: 20,
-            backgroundImage: new AssetImage('assets/img/squats_start_image.jpg'),
-          ),
+          ClipRRect(
+          borderRadius: BorderRadius.circular(80.0),
+        
+          child: Image.asset(
+             "assets/img/squats_start_image.jpg",
+              width: 200,
+              height: 200,
+              fit: BoxFit.fill,
+            
+            ),
+
+        ),
           Text("Squats", style: headerTextStyle,),
         ],
         ),

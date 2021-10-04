@@ -9,6 +9,7 @@ import 'package:flutter/widgets.dart';
 //import '/workspaces/APP_IoT_PowerManual_PowerManual/myapp/lib/MenuRow.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
 import 'package:myapp/detail/bluetoothConnect.dart';
+import 'package:myapp/replace/page/replaceBenchPressPage.dart';
 import 'package:myapp/replace/page/replaceSquatsPage.dart';
 import '../youtubelink/SquatsStrechingYoutube.dart';
 import '../youtubelink/HowToSquatsYoutube.dart';
@@ -89,7 +90,6 @@ List _widgetOptions = [
     SquatsDetailPage(),
     SquatsStrechingYoutubePlayerDemo(title: "Squats Streching",),
     HowtoSquatsYoutubePlayerDemo(title: "How to Squats"),
-   
     replaceSquatsPage(),
     StartSquats(),
   ];

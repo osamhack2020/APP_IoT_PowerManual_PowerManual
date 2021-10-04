@@ -20,27 +20,29 @@ class DataInput extends StatelessWidget{
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Row(
-            children: [
-              Text("Count", style: subHeaderTextStyle,),
+          
+            
               TextField(
+                
                 decoration: new InputDecoration(
+                  label: Text("Count", style: subHeaderTextStyle),
                   hintText: "다음 세트에 수행할 갯수를 입력하세요"
                 ),
               ),
-            ],
-          ),
-          Row(
-            children: [
-              Text("Weight", style: subHeaderTextStyle,),
+            
+          
+          
+
+            
               TextField(
                 decoration: new InputDecoration(
+                  label: Text("Weight", style: subHeaderTextStyle),
                   hintText: "다음 세트에 수행할 무게를 입력하세요"
                 ),
               ),
             ],
-          ),
-        ],
+          
+        
       ),
     );
   }
