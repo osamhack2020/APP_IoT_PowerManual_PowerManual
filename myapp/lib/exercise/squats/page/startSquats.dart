@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/MenuRow.dart';
 import '../component/squatsImage.dart';
 import '../component/dataInput.dart';
-
+import './exerciseSquats.dart';
 
 final baseTextStyle = const TextStyle(
   fontFamily: 'Poppins'
@@ -52,7 +52,10 @@ class StartSquats extends StatelessWidget{
           ),
           ElevatedButton(
             onPressed: (){
-
+              Navigator.push(
+                context,
+                 MaterialPageRoute(builder: (context)=> ExerciseSquatsPage())
+                );
             },
            child: Text("운동 시작하기"))
         ],
