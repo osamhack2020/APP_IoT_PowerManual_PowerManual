@@ -124,5 +124,11 @@ flutter:
           weight: 600
         - asset: assets/fonts/Poppins-Regular.ttf
           weight: 400
+    - family: Elice
+      fonts:
+        - asset: assets/fonts/EliceDigitalBaeumOTF_Bold.otf
+          weight: 600
+        - asset: assets/fonts/EliceDigitalBaeumOTF_Regular.otf
+          weight: 400
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
