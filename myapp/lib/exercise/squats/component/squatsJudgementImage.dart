@@ -5,7 +5,7 @@ final baseTextStyle = const TextStyle(
 );
 final headerTextStyle = baseTextStyle.copyWith(
   color: Colors.white,
-  fontSize:  18.0,
+  fontSize:  23.0,
   fontWeight: FontWeight.w600
 );
 
@@ -40,6 +40,7 @@ class _SquatsJudgementImageState extends State<SquatsJudgementImage> {
            child: Column(
             
            children: [
+             SizedBox(height: 5,),
              Text("Squats", style: headerTextStyle,),
              SizedBox(height: 10,),
              ClipRRect(
@@ -53,7 +54,7 @@ class _SquatsJudgementImageState extends State<SquatsJudgementImage> {
             ),
 
           ),
-             
+             SizedBox(height: 7,),
              Text('운동 시작 전 자세입니다.', style: KorTextStyle )
              
            ],

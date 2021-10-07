@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/MenuRow.dart';
+import 'package:myapp/exercise/benchPress/page/exerciseBenchPress.dart';
 import '../component/benchPressImage.dart';
 import '../component/dataInput.dart';
 
@@ -50,8 +51,11 @@ class StartBenchPress extends StatelessWidget{
             height: 30,
           ),
           ElevatedButton(
-            onPressed: (){
-
+           onPressed: (){
+              Navigator.push(
+                context,
+                 MaterialPageRoute(builder: (context)=> ExerciseBenchPressPage())
+                );
             },
            child: Text("운동 시작하기"))
         ],

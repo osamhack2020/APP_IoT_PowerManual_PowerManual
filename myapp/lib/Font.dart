@@ -5,18 +5,18 @@ final baseTextStyle = const TextStyle(
 );
 final headerTextStyle = baseTextStyle.copyWith(
   color: Colors.white,
-  fontSize:  18.0,
+  fontSize:  23.0,
   fontWeight: FontWeight.w600
 );
 
 final regularTextStyle = baseTextStyle.copyWith(
   color: const Color(0xffb6b2df),
-  fontSize: 9.0,
+  fontSize: 12.0,
   fontWeight: FontWeight.w400
 );
 
 final subHeaderTextStyle = regularTextStyle.copyWith(
-  fontSize: 12.0
+  fontSize: 15.0
 );
 
 final korBaseStyle = const TextStyle(
@@ -25,16 +25,16 @@ final korBaseStyle = const TextStyle(
 
 final KorHeaderStyle= baseTextStyle.copyWith(
   color: Colors.white,
-  fontSize:18.0,
+  fontSize:23.0,
   fontWeight: FontWeight.w600,
 );
 
 final KorTextStyle= baseTextStyle.copyWith(
   color: Colors.white,
-  fontSize:12.0,
+  fontSize:15.0,
   fontWeight: FontWeight.w400,
 );
 
 final korLineStyle=baseTextStyle.copyWith(
-  fontSize: 9.0,
+  fontSize: 12.0,
 );

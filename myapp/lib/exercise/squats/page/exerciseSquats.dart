@@ -1,3 +1,5 @@
+//import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:myapp/exercise/squats/component/exercisePageButton.dart';
 import '../component/squatsJudgementImage.dart';
@@ -19,8 +21,11 @@ class _ExerciseSquatsPageState extends State<ExerciseSquatsPage> {
              crossAxisAlignment: CrossAxisAlignment.center,
              children: [
                SquatsJudgementImage(),
+               SizedBox(height: 10,),
                WeightSetCount(),
+               SizedBox(height: 7,),
                SquatsCount(),
+               SizedBox(height: 15,),
                ExercisePageButoon(),
              ],
            ),

@@ -4,6 +4,7 @@ class ExercisePageButoon extends StatelessWidget{
   Widget build(BuildContext){
     return Container(
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
            ElevatedButton(
             onPressed: (){
@@ -14,6 +15,7 @@ class ExercisePageButoon extends StatelessWidget{
             },
            child: Text("자세 설명 보기")
            ),
+           SizedBox(width: 30,),
            ElevatedButton(
             onPressed: (){
               //Navigator.push(

@@ -6,26 +6,28 @@ class WeightSetCount extends StatelessWidget{
   Widget build(BuildContext){
     return Container(
       child: Center(
-        child: Column(
+        
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Row(
-            children: [
-              Text('무게:', style: korLineStyle,),
+          
+           
+              Text('무게:', style: KorTextStyle,),
               SizedBox(width: 10,),
-              Text('xx', style: regularTextStyle,),
+              Text('xx', style: headerTextStyle,),
               SizedBox(width: 3,),
-              Text('KG', style: subHeaderTextStyle,)
-            ],
-          ),
-          Row(
-            children: [
-              Text('갯수:', style: korLineStyle,),
+              Text('KG', style: subHeaderTextStyle,),
+            
+          
+          SizedBox(width: 15,),
+           
+              Text('갯수:', style: KorTextStyle,),
               SizedBox(width: 10,),
-              Text('xx', style: regularTextStyle,),
+              Text('xx', style: headerTextStyle,),
               SizedBox(width: 3,),
               Text('SETS', style: subHeaderTextStyle,)
-            ],
-          )
+            
+          
         ],
       ),
       ),
