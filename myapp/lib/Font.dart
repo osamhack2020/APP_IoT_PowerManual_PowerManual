@@ -15,6 +15,12 @@ final regularTextStyle = baseTextStyle.copyWith(
   fontWeight: FontWeight.w400
 );
 
+final MiddleTextStyle = baseTextStyle.copyWith(
+  color: const Color(0xffb6b2df),
+  fontSize: 18.0,
+  fontWeight: FontWeight.w400
+);
+
 final subHeaderTextStyle = regularTextStyle.copyWith(
   fontSize: 15.0
 );
@@ -27,6 +33,12 @@ final KorHeaderStyle= baseTextStyle.copyWith(
   color: Colors.white,
   fontSize:23.0,
   fontWeight: FontWeight.w600,
+);
+
+
+final KorMiddlesytle = KorHeaderStyle.copyWith(
+  color: Color(0xffb6b2df),
+  fontSize: 20,
 );
 
 final KorTextStyle= baseTextStyle.copyWith(

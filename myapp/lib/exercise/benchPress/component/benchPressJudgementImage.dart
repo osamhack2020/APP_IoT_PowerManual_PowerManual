@@ -41,12 +41,12 @@ class _BenchPressJudgementImageState extends State<BenchPressJudgementImage> {
             
            children: [
              SizedBox(height: 5,),
-             Text("Squats", style: headerTextStyle,),
+             Text("Bench Press", style: headerTextStyle,),
              SizedBox(height: 10,),
              ClipRRect(
             borderRadius: BorderRadius.circular(70.0),
              child: Image.asset(
-             "assets/img/BenchPress_setup.jpeg",
+             "assets/img/BenchPress_setup.jpg",
               width: 200,
               height: 200,
               fit: BoxFit.fill,
