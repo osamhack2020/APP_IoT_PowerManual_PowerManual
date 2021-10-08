@@ -50,3 +50,14 @@ final KorTextStyle= baseTextStyle.copyWith(
 final korLineStyle=baseTextStyle.copyWith(
   fontSize: 12.0,
 );
+final correctHeaderTextStyle = baseTextStyle.copyWith(
+  color: Colors.greenAccent,
+  fontSize:  23.0,
+  fontWeight: FontWeight.w600
+);
+
+final wrongHeaderTextStyle = correctHeaderTextStyle.copyWith(
+  color: Colors.redAccent,
+
+  
+);

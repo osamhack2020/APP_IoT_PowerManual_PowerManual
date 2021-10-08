@@ -20,7 +20,7 @@ class ExercisePageButoon extends StatelessWidget{
                  MaterialPageRoute(builder: (context)=> ()))
                );*/
             },
-           child: Text("자세 설명 보기")
+           child: Text("자세 설명 보기", style: KorHeaderStyle,)
            ),
            SizedBox(width: 30,),
            ElevatedButton(
@@ -30,7 +30,7 @@ class ExercisePageButoon extends StatelessWidget{
                  MaterialPageRoute(builder: (context)=> AfterSquats())
               );
             },
-                 child: Text("시작화면으로", style: KorMiddlesytle,)),
+                 child: Text("다음세트로", style: KorHeaderStyle,)),
                  
         ],
       ),

@@ -1,17 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/Font.dart';
+import 'package:myapp/Font.dart';
 
-final correctHeaderTextStyle = baseTextStyle.copyWith(
-  color: Colors.greenAccent,
-  fontSize:  23.0,
-  fontWeight: FontWeight.w600
-);
-
-final wrongHeaderTextStyle = subHeaderTextStyle.copyWith(
-  color: Colors.redAccent,
-
-  
-);
 
 class BenchPressCount extends StatefulWidget {
    @override
