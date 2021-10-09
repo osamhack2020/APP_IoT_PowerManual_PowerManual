@@ -29,6 +29,9 @@
    6. 내부 충전모듈 LED: 충전중일때는 빨간불이 켜지며 충전이 완료되면 파란불이 켜집니다.  
    7. 내부 충전모듈 USB 단자: USB충전을 위한 단자가 달려있습니다.  
 
+ - 회로도:  
+   <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/IoT/PowerManual_bb.png?raw=true" width="800" height="800"/>
+
    
 
 ### APP
