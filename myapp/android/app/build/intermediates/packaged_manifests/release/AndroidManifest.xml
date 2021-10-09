@@ -5,8 +5,14 @@
     android:versionName="1.0.0" >
 
     <uses-sdk
-        android:minSdkVersion="17"
+        android:minSdkVersion="19"
         android:targetSdkVersion="30" />
+    <!-- 주석 여기부터 2줄 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <queries>
         <intent>
@@ -14,10 +20,31 @@
         </intent>
     </queries>
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
+        android.name="Application"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:icon="@mipmap/ic_launcher"
         android:label="myapp" >
+
+        <!-- 여기부터, 추가로 위의 adroidname은 삽입된것 -->
+        <service
+            android:name="io.flutter.plugins.androidalarmmanager.AlarmService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <receiver
+            android:name="io.flutter.plugins.androidalarmmanager.AlarmBroadcastReceiver"
+            android:exported="false" />
+        <receiver
+            android:name="io.flutter.plugins.androidalarmmanager.RebootBroadcastReceiver"
+            android:enabled="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <!-- 여기까지 -->
         <activity
             android:name="com.example.myapp.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

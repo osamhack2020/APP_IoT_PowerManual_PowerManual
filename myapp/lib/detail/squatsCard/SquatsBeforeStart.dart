@@ -8,9 +8,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 //import '/workspaces/APP_IoT_PowerManual_PowerManual/myapp/lib/MenuRow.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
+import 'package:myapp/detail/bluetoothConnect.dart';
+import 'package:myapp/replace/page/replaceBenchPressPage.dart';
 import 'package:myapp/replace/page/replaceSquatsPage.dart';
 import '../youtubelink/SquatsStrechingYoutube.dart';
 import '../youtubelink/HowToSquatsYoutube.dart';
+import 'package:myapp/exercise/squats/page/startSquats.dart';
 import 'SquatsDetail.dart';
 
 class SquatsPage extends StatefulWidget{
@@ -24,6 +27,8 @@ class _SquatsPage extends State<SquatsPage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
+      
       
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -64,6 +69,20 @@ class _SquatsPage extends State<SquatsPage>{
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
+      
+       
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => BTConnect(title: "Bluetooth Connect",)),
+            );
+          },
+          //label: const Text(""),
+          child: Icon(Icons.bluetooth),
+          
+          ),
+      
     );
 }
 
@@ -71,11 +90,7 @@ List _widgetOptions = [
     SquatsDetailPage(),
     SquatsStrechingYoutubePlayerDemo(title: "Squats Streching",),
     HowtoSquatsYoutubePlayerDemo(title: "How to Squats"),
-   
     replaceSquatsPage(),
-    Text(
-      'News',
-      style: TextStyle(fontSize: 30, fontFamily: 'DoHyeonRegular'),
-    ),
+    StartSquats(),
   ];
 }

@@ -29,7 +29,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  
+  ##android_alarm_manager_plus:
+  ##  git:
+  ##    url: https://github.com/jja08111/plus_plugins.git
+  ##    path: packages/android_alarm_manager_plus
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -38,8 +41,14 @@ dependencies:
   cupertino_icons: ^1.0.2
   youtube_player_flutter: ^8.0.0
   youtube_player_iframe: ^2.2.2
-  android_alarm_manager_plus: ^1.2.0
   shared_preferences: ^2.0.8
+  mobx: ^2.0.0
+  flutter_mobx: ^2.0.0
+  permission_handler: ^8.1.6
+  android_alarm_manager: ^2.0.2
+  flutter_blue: ^0.8.0
+  
+  
  
   
 
@@ -53,6 +62,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
+  build_runner: ^1.12.2
+  mobx_codegen: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -112,6 +123,12 @@ flutter:
         - asset: assets/fonts/Poppins-SemiBold.ttf
           weight: 600
         - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+    - family: Elice
+      fonts:
+        - asset: assets/fonts/EliceDigitalBaeumOTF_Bold.otf
+          weight: 600
+        - asset: assets/fonts/EliceDigitalBaeumOTF_Regular.otf
           weight: 400
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
