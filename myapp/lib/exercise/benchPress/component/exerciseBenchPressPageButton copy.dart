@@ -7,7 +7,7 @@ import 'package:mobx/mobx.dart';
 import 'package:myapp/Font.dart';
 import 'package:myapp/exercise/benchPress/page/afterBenchPress.dart';
 import '../page/afterBenchPress.dart';
-class ExercisePageButoon extends StatelessWidget{
+class ExerciseBenchPressPageButoon extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Container(

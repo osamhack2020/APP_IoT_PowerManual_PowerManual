@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/Font.dart';
 import 'package:myapp/HomePage.dart';
+import 'package:myapp/HomePageBody.dart';
 import 'package:myapp/exercise/benchPress/component/benchPressCount.dart';
 final KorBlackHeaderStyle= KorHeaderStyle.copyWith(
   color: Colors.black,
@@ -30,10 +31,10 @@ class FinalSquats extends StatelessWidget{
             children: [
               
               ClipRRect(
-          borderRadius: BorderRadius.circular(40.0),
+          borderRadius: BorderRadius.circular(80.0),
         
           child: Image.asset(
-             "assets/img/stimulation/stimulation1.jpg",
+             "assets/img/stimulation1.jpg",
               width: 400,
               height: 200,
               fit: BoxFit.fill,
@@ -41,7 +42,7 @@ class FinalSquats extends StatelessWidget{
             ),
 
         ),
-
+        SizedBox(height:20),
              Row(
                mainAxisAlignment: MainAxisAlignment.center,
                children: [
@@ -80,6 +81,7 @@ class FinalSquats extends StatelessWidget{
               ),
               SizedBox(height: 5,),
                Row(
+                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("가동범위부족:", style:KorMiddlesytle),
                   SizedBox(width:5),
@@ -96,7 +98,7 @@ class FinalSquats extends StatelessWidget{
             onPressed: (){
               Navigator.push(
                 context,
-                 MaterialPageRoute(builder: (context)=> HomePage())
+                 MaterialPageRoute(builder: (context)=> HomePageBody())
               );
             },
                  child: Text("시작화면으로", style: KorHeaderStyle,))
