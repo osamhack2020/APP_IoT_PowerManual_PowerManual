@@ -17,7 +17,7 @@ void getData();
 
 void setup() {
   initSensor();
-  Serial.begin(9600);
+  Serial.begin(115200);
   delay(200);
 }
 

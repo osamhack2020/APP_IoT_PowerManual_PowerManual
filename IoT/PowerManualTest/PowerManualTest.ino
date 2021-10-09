@@ -61,15 +61,15 @@ void loop() {
   angleFiZ = angleGyZ; // Z축은 자이로 센서만을 이용
   //Serial.print("AngleAcX: ");
   //Serial.print(angleAcX);
-  Serial.print("FiX: ");
+  Serial.print("FilteredX: ");
   Serial.print(angleFiX);
   //Serial.print("\t AngleAcY: ");
   //Serial.print(angleAcY);
-  Serial.print(" FiY: ");
+  Serial.print(" FilteredY: ");
   Serial.print(angleFiY);
   //Serial.print("\t AngleAcZ: ");
   //Serial.print(angleGyZ);
-  Serial.print(" FiZ: ");
+  Serial.print(" FilteredZ: ");
   Serial.println(angleFiZ);
   delay(100);
 }
