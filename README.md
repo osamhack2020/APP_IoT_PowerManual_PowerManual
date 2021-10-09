@@ -33,7 +33,7 @@
    <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/IoT/powermanual.png?raw=true"/> 
 
  - 내부 회로도:  
-   <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/IoT/PowerManual_bb.png?raw=true" width="800" height="800"/>
+   <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/IoT/PowerManual_bb.png?raw=true"/>
 
    
 
