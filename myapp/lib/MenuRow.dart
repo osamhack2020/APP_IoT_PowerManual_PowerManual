@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/detail/benchpressCard/BenchPressBeforeStart.dart';
 import 'package:myapp/detail/squatsCard/SquatsBeforeStart.dart';
+import 'alarmpage/alarmtest.dart';
 
 
 
@@ -163,7 +164,7 @@ final alarmCardContent = Container(
       ),
       new Container(height: 10.0,),
       new Text(
-        '#Alarm #보충제 시간 알람. #먹는것까지 운동',//여기
+        '#보충제 시간알람',//여기
         style: subHeaderTextStyle,
       ),
       new Container(
@@ -267,7 +268,7 @@ final dataCardContent = Container(
       ),
       new Container(height: 10.0,),
       new Text(
-        '#Record #운동 기록 확인',//여기
+        '#운동 기록 확인',//여기
         style: subHeaderTextStyle,
       ),
       new Container(
@@ -479,7 +480,7 @@ class Alarmcard extends StatelessWidget{
       onTap:(){
         Navigator.push(
           context, 
-         MaterialPageRoute(builder: (context)=>SquatsPage()),
+         MaterialPageRoute(builder: (context)=>AlarmTest()),
          
         );
       }

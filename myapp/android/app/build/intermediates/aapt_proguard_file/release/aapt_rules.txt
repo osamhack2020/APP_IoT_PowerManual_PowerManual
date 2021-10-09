@@ -3,6 +3,9 @@
 -keep class com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.ActionBroadcastReceiver { <init>(); }
 -keep class com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.ChromeCustomTabsActivity { <init>(); }
 -keep class com.pichillilorenzo.flutter_inappwebview.in_app_browser.InAppBrowserActivity { <init>(); }
+-keep class io.flutter.plugins.androidalarmmanager.AlarmBroadcastReceiver { <init>(); }
+-keep class io.flutter.plugins.androidalarmmanager.AlarmService { <init>(); }
+-keep class io.flutter.plugins.androidalarmmanager.RebootBroadcastReceiver { <init>(); }
 -keep class io.flutter.plugins.urllauncher.WebViewActivity { <init>(); }
 -keep class android.widget.SearchView { <init>(android.content.Context); }
 
