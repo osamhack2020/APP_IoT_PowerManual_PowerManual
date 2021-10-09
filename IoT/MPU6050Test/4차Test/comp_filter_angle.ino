@@ -11,7 +11,7 @@ double angleGyX, angleGyY, angleGyZ;
 double angleFiX, angleFiY, angleFiZ;
 
 const double RADIAN_TO_DEGREE = 180 / 3.14159;
-const double DEG_PER_SEC = 23767 / 250; // 1초에 회전하는 각도
+const double DEG_PER_SEC = 32767 / 250; // 1초에 회전하는 각도
 const double ALPHA = 0.9; // 1 / (1 + 0.04); 관성 센서기반 스쿼트 각도 측정 융합 시스템 논문에 따르면 최적의 상보 필터 계수는 0.9 이다.
 
 unsigned long now = 0; // 현재 시간 저장용 변수
