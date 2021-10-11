@@ -43,6 +43,7 @@ void checking() {
   else if (!sth==' ') {//보낼것이 있을때
     blue.println(sth);
     //led끄기
+    sth=" ";
   }
   else if (flag==true){//명령도 없고 완료된 측정된 것도 없을때
     blue.println(5);//측정중
