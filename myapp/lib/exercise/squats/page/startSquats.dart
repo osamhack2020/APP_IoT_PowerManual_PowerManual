@@ -56,6 +56,7 @@ class StartSquats extends StatelessWidget{
                 context,
                  MaterialPageRoute(builder: (context)=> ExerciseSquatsPage())
                 );
+              
             },
            child: Text("운동 시작하기"))
         ],

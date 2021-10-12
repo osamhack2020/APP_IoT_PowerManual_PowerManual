@@ -122,7 +122,7 @@ Widget _getContent(){
             children: <Widget>[
               new Text(_overviewTitle, style: headerTextStyle,),
               new Separator(),
-              new Text("What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,  when an unknown printer took a galley of type and scrambled it to make a type specimen book.   It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",style: regularTextStyle,)
+              new Text("3대 운동 중 하나로 알려진 벤치프레스는 흉근을 중점으로 어깨와 삼두 근육을 성장시킬 수 있는 운동이다. 벤치에 누워 덤벨 혹은 바벨을 가슴과 수직으로 들어올리는 방법으로 운동한다. \n운동을 시작하기 전 운동방법에 대한 충분한 습득과 스트레칭을 통해 부상을 방지해야 한다. 영상을 시청하고 운동을 시작하는 것을 권장한다. \n기기를 양쪽 팔꿈치에 끼우고 운동을 시작하세요.",style: regularTextStyle,)
 
 
             ],
