@@ -39,6 +39,9 @@ https://wokwi.com/arduino/projects/311334970688799296
 가중치를 과도하게 조정하면 출력 딜레이가 발생하므로 주의  
 cf)칼만필터(출력 딜레이를 줄여주는 필터)는 드론과 같이 빠른 반응이 중요한 곳에 사용하므로 우리 PowerManual에는 불필요함  
 
+6차 Test:
+
+
 Testbed  
 구성:  
 Wemos D1 R2, MPU6050  
