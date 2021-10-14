@@ -17,21 +17,25 @@ void checking() {
     }
     command=static_cast<int>(blue.read());
     switch(command){
-      case 1://시작하기
+      case 11://첫번째 종류의 운동(스쿼트) 시작
       flag=true;
+      exercise=1;
       break;
+      //case 12://두번째 종류의 운동 시작
+      //flag=ture;
+      //exercise=2;
+      //break;
       case 2://멈추기
       flag=false;
       //측정중단함수
       break;
       default:
-      blue.println('e');
+      blue.println(99);
     }
     
   }
   else if (!sth==' ') {//보낼것이 있을때
     blue.println(sth);
-    //led끄기
     sth=" ";
   }
   else if (flag==true){//명령도 없고 완료된 측정된 것도 없을때

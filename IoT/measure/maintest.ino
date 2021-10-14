@@ -2,12 +2,13 @@
 void setup() {
   setupmeasure();
   blue.begin(9600);
-  MsTimer2::set(1000,checking);//1초마다 명령이 들어왔는지,보낼것이 있는지 체크
+  MsTimer2::set(500,checking);//0.5초마다 명령이 들어왔는지,보낼것이 있는지 체크
   MsTimer2::start();
 }
 
 void loop() {
-switch(exercise){
+  if (flag){
+    switch(exercise){
       case 1://squart 측정
         measureSquart();
       break;
@@ -17,5 +18,9 @@ switch(exercise){
       default:
       blue.println('e');
   
-}
+  }
+ }
+ else{
+  delay(500);
+ }
 }
