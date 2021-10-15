@@ -108,7 +108,7 @@ void loop() {
       measuredY[0] = angleFiY;
       measuredY[1] = angleFiY;
       // angleFiY값의 전후 차이가 5이상 나지 않으면 대기
-      while( (measuredY[1] - measuredY[0]) < 5 ) {
+      while( (measuredY[1] - measuredY[0]) < 3 ) {
         getAngle();
         measuredY[0] = measuredY[1];
         measuredY[1] = angleFiY;
@@ -157,7 +157,7 @@ void loop() {
         measuredY[0] = angleFiY;
         measuredY[1] = angleFiY;
         // angleFiY값의 전후 차이가 -5이상 나지 않으면 아직 올라오는 중 아님
-        while( (measuredY[1] - measuredY[0]) > -5) {
+        while( (measuredY[1] - measuredY[0]) > -3) {
           getAngle();
           measuredY[0] = measuredY[1];
           measuredY[1] = angleFiY;
