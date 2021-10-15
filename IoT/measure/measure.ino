@@ -1,7 +1,14 @@
-//측정
+//하나의 ino 파일로 합침
+//측정loop를 함수로 바꿈
+// getAngle()에서 Serial.print가 disabled된 version
 
 #include<Wire.h>  // MPU6050과 I2C 통신을 위한 라이브러리
 #include<math.h>
+#include <SoftwareSerial.h>
+#include <MsTimer2.h>//인터럽트를 위한 라이브러리
+SoftwareSerial blue(2,3);
+int command=0;
+boolean flag=false;
 
 const int MPU_ADDR = 0x68;    // I2C통신을 위한 MPU6050의 주소
 int16_t AcX = 0, AcY = 0, AcZ = 0, Tmp = 0, GyX = 0, GyY = 0, GyZ = 0;   // 가속도(Acceleration)와 자이로(Gyro)
@@ -25,7 +32,9 @@ double averGyX = 0, averGyY = 0, averGyZ = 0;
 int count = 0;  // getAngle() 내부용 카운터 변수
 
 int squat = 1;
-int exercise  = 0;  //앱으로 부터 어떤 운동을 수행할지 전달받는 변수; 처음 값은 0 지금은 squat 시연용이어서 1
+int exercise  = 0;  //앱으로 부터 어떤 운동을 수행할지 전달받는 변수;
+int reps = 0; // 운동횟수; 
+int currentReps = 0; // 운동 횟수 카운트 변수
 
 double correctX1 = 0, correctY1 = 0, correctZ1 = 0;  //올바른 운동 시작 자세
 double correctX2 = 0, correctY2 = 0, correctZ2 = 0;  //올바른 중간 운동 자세
@@ -37,14 +46,52 @@ double* measuredZ;  //측정된 각도값들 저장
 double measuredX_v = 0, measuredY_v = 0, measuredZ_v = 0;  //측정된 속도값 저장
 //double measuredX_v2 = 0, measuredY_v2 = 0, measuredZ_v2 = 0;
 
-void setupmeasure(){
+
+//setup,loop
+void setup() {
+  setupmeasure();
+  blue.begin(9600);
+  MsTimer2::set(500,checking);//0.5초마다 명령이 들어왔는지,보낼것이 있는지 체크
+  MsTimer2::start();
+}
+
+void loop() {
+  if (flag){
+    switch(exercise){
+      case 1://squart 측정
+        measureSquart();
+      break;
+//      case 2: //다른 운동일경우
+//      measureSthelse();
+//      break;
+      default:
+      blue.println("e0");
+  
+  }
+ }
+ else{
+  delay(500);
+ }
+}
+
+//setup.loooop 끝
+
+//measure 시작
+
+void setupmeasure() {
   initSensor();
   Serial.begin(115200);
   caliSensor();   //  초기 센서 캘리브레이션 함수 호출
   past = millis(); // past에 현재 시간 저장  
 }
+
 void measureSquart() {
-    
+  /********************************************
+  앱으로 부터 어떤 운동시작할지 몇회 실시할지 블루투스로 전달받는 코드 필요
+  ********************************************/
+  /**
+  운동종류 판단은 maintest에서
+  **/  
     // 실험을 통해 얻은 올바른 운동 자세, 속도 값들 
     correctY1 = -87.4552;  // 올바른 시작, 돌아왔을 때 자세
     correctY2 = 16.0;      // 올바른 내려갔을때 자세
@@ -56,8 +103,10 @@ void measureSquart() {
     //int counter = 0;  
     unsigned long past2 = 0;  // 시간 저장용 변수들2
     Serial.println("시작자세를 취해주세요");  // 똑바로 선 자세, 센서는 허벅지 앞쪽 중앙, 무릎 위쪽에 X축이 하늘을 바라보게
+    blue.print("S1");
     while(!correctStart){
       Serial.println("...");  
+      blue.print("SW");
       getAngle();  //현재 신체 모션 감지
       correctStart = (angleFiY > (correctY1 - 10)) && (angleFiY < (correctY1 + 10));  //올바른 시작 자세에 있는지 판단
       if(correctStart) {  //올바른 시작 차세를 취하기 시작하면
@@ -89,67 +138,125 @@ void measureSquart() {
       */
     }
     
-    //운동 시작
-    Serial.println("운동을 시작합니다");
+    while( currentReps < reps ) {
+      
+      //운동 시작
+      Serial.println("운동을 시작합니다");
+      blue.print("SS");
     
-    // 운동 시작 안내가 나오고 내려가기 시작하는지 판단
-    measuredY = new double[2];
-    getAngle();
-    measuredY[0] = angleFiY;
-    measuredY[1] = angleFiY;
-    // angleFiY값의 전후 차이가 5이상 나지 않으면 대기
-    while( (measuredY[1] - measuredY[0]) < 5 ) {
+      // 운동 시작 안내가 나오고 내려가기 시작하는지 판단
+      measuredY = new double[2];
       getAngle();
-      measuredY[0] = measuredY[1];
+      measuredY[0] = angleFiY;
       measuredY[1] = angleFiY;
-      delay(20);
-    }
-    delete[] measuredY;
-    
-    // 중간지점까지 운동자세 판단
-    unsigned long past3 = millis(); // 시간 저장용 변수3, 내려가기 시작할때의 시간 저장
-    int squatPosture = -1; // 판단결과 저장 변수, 0 = 정확, 1 =  높음, 2 = 낮음
-    int squatSpeed = -1; // 판단결과 저장 변수, 0 = 정확, 1 = 빠름, 2 = 느림
-    bool correctCheckPoint = 1;
-    while( angleFiY < 11) {
-      getAngle();
-      if( angleFiY < -76) { // 허벅지가 덜 내려가고 다시 올라옴
-        squatPosture = 1;
-        Serial.println("너무 높습니다");
-        correctCheckPoint = 0;
-        break;
+      // angleFiY값의 전후 차이가 3이상 나지 않으면 대기
+      while( (measuredY[1] - measuredY[0]) < 2 ) {
+        getAngle();
+        measuredY[0] = measuredY[1];
+        measuredY[1] = angleFiY;
+        delay(20);
       }
-      delay(20);
-    }
+      delete[] measuredY;
     
-    // 중간지점에서 올라올때까지 운동자세 판단
-    if(!correctCheckPoint) { // 덜 내려가고 다시 시작자세로 돌아온 경우
-      correctCheckPoint = 1;  // 다시 1로 reset하고 시작자세부터 다시 시작
-    }
-    else {
-      // 내려간 속도 판단
-      if( (millis() - past3) < 2000) {
-        squatSpeed = 1;
-        Serial.println("너무 빠릅니다.");
+      // 중간지점까지 운동자세 판단
+      unsigned long past3 = millis(); // 시간 저장용 변수3, 내려가기 시작할때의 시간 저장
+      int squatPosture = -1; // 판단결과 저장 변수, 0 = 정확, 1 =  높음, 2 = 낮음
+      int squatSpeed = -1; // 판단결과 저장 변수, 0 = 정확, 1 = 빠름, 2 = 느림
+      bool correctCheckPoint = 1;
+      while( angleFiY < 11) {  // -76이상 올라갈때까지 루프반복
+        getAngle();
+        if( angleFiY > -76)
+          break;
+        delay(20);
       }
-      else if( (millis() - past3) > 4000) {
-        squatSpeed = 2;
-        Serial.println("너무 느립니다.");
+      while( angleFiY < 11) {
+        getAngle();
+        if( angleFiY < -76) { // 허벅지가 덜 내려가고 다시 올라옴
+          squatPosture = 1;
+          Serial.println("너무 높습니다");
+          blue.print("ED1");
+          correctCheckPoint = 0;
+          break;
+        }
+        delay(20);
+      }
+    
+      // 중간지점에서 올라올때까지 운동자세 판단
+      if(!correctCheckPoint) { // 덜 내려가고 다시 시작자세로 돌아온 경우
+        //correctCheckPoint = 1;  // 다시 1로 reset하고 시작자세부터 다시 시작
       }
       else {
-        squatSpeed = 0;
-        Serial.println("정상 속도.");
+        // 내려간 속도 판단
+        if( (millis() - past3) < 2000) {
+          squatSpeed = 1;
+          Serial.println("너무 빠릅니다.");
+          blue.print("EDF");
+        }
+        else if( (millis() - past3) > 4000) {
+          squatSpeed = 2;
+          Serial.println("너무 느립니다.");
+          blue.print("EDS");
+        }
+        else {
+          squatSpeed = 0;
+          Serial.println("정상 속도.");
+          blue.print("EDC");
+        }
+        
+        // 다시 올라오는지 판단
+        measuredY = new double[2];
+        getAngle();
+        measuredY[0] = angleFiY;
+        measuredY[1] = angleFiY;
+        // angleFiY값의 전후 차이가 -3이하 나지 않으면 아직 올라오는 중 아님
+        while( (measuredY[1] - measuredY[0]) > -2) {
+          getAngle();
+          measuredY[0] = measuredY[1];
+          measuredY[1] = angleFiY;
+          if( angleFiY > 30 ) {
+            squatPosture = 2;
+            Serial.println("너무 낮습니다.");
+            blue.print("ED2");
+          }
+          delay(20);
+        }
+        delete[] measuredY;
+    
+        //올라올때의 속도 판단
+        unsigned long past4 = millis(); // 시간 저장용 변수4, 올라가기 시작할때의 시간 저장
+        while( angleFiY >= -76 ) {
+          getAngle();
+          if( angleFiY < -76 ) {
+            if( millis() - past4 < 2000) {
+              squatSpeed = 1;
+              Serial.println("너무 빠릅니다.");
+              blue.print("EUF");
+            }
+            else if( (millis() - past4) > 4000) {
+              squatSpeed = 2;
+              Serial.println("너무 느립니다.");
+              blue.print("EUS");
+            }
+            else {
+              squatSpeed = 0;
+              Serial.println("정상 속도.");
+              blue.print("EUC");
+            }
+          }
+          delay(20);
+        }
+        currentReps++;
+        blue.print("F");
       }
       
-    }
-    
-    // 다시 올라오는지 판단
-    measuredY = new double[2];
-    getAngle();
-    measuredY[0] = angleFiY;
-    measuredY[1] = angleFiY;
-    // angleFiY값의 전후 차이가 -5이상 나지 않으면 아직 올라오는 중 아님
-    while( (measuredY[1] - measuredY[0]) > -5) {
+      /******************************************
+      // 다시 올라오는지 판단
+      measuredY = new double[2];
+      getAngle();
+      measuredY[0] = angleFiY;
+      measuredY[1] = angleFiY;
+      // angleFiY값의 전후 차이가 -5이상 나지 않으면 아직 올라오는 중 아님
+      while( (measuredY[1] - measuredY[0]) > -5) {
       getAngle();
       measuredY[0] = measuredY[1];
       measuredY[1] = angleFiY;
@@ -158,27 +265,30 @@ void measureSquart() {
         Serial.println("너무 낮습니다.");
       }
       delay(20);
-    }
-    delete[] measuredY;
+      }
+      delete[] measuredY;
     
-    //올라올때의 속도 판단
-    unsigned long past4 = millis(); // 시간 저장용 변수4, 올라가기 시작할때의 시간 저장
-    while( angleFiY >= -76 ) {
-      getAngle();
-      if( angleFiY < -76 ) {
-        if( millis() - past4 < 2000) {
-          squatSpeed = 1;
-          Serial.println("너무 빠릅니다.");
-        }
-        else if( (millis() - past4) > 4000) {
-          squatSpeed = 2;
-          Serial.println("너무 느립니다.");
-        }
-        else {
-          squatSpeed = 0;
-          Serial.println("정상 속도.");
+      //올라올때의 속도 판단
+      unsigned long past4 = millis(); // 시간 저장용 변수4, 올라가기 시작할때의 시간 저장
+      while( angleFiY >= -76 ) {
+        getAngle();
+        if( angleFiY < -76 ) {
+          if( millis() - past4 < 2000) {
+            squatSpeed = 1;
+            Serial.println("너무 빠릅니다.");
+          }
+          else if( (millis() - past4) > 4000) {
+            squatSpeed = 2;
+            Serial.println("너무 느립니다.");
+          }
+          else {
+            squatSpeed = 0;
+            Serial.println("정상 속도.");
+          }
         }
       }
+      ****************************/
+  
     }
     
     /*****************************************************************************************************
@@ -283,8 +393,11 @@ void measureSquart() {
     }
     **************/
     
-  }
-
+  
+  
+  exercise = 0;  //다시 0으로 초기화
+  blue.print("FF");
+}
 
 void getAngle() {
   getData(); 
@@ -325,17 +438,17 @@ void getAngle() {
   ***************************/
   //if(count==10){
   //Serial.print("X: ");
-  Serial.print(angleFiX);
-  Serial.print(" ");
+  //Serial.print(angleFiX);
+  //Serial.print(" ");
   //Serial.print("\t AngleAcY:");
   //Serial.print(angleAcY);
   //Serial.print(" Y: ");
-  Serial.print(angleFiY);
-  Serial.print(" ");
+  //Serial.print(angleFiY);
+  //Serial.print(" ");
   //Serial.print("\t AngleGyZ:");
   //Serial.print(angleGyZ);
   //Serial.print(" Z: ");
-  Serial.println(angleFiZ);
+  //Serial.println(angleFiZ);
   //count =0;
   //}
   //count++;
@@ -415,4 +528,52 @@ void caliSensor() {
   }
   averAcX=sumAcX/20;  averAcY=sumAcY/20;  averAcZ=sumAcY/20;
   averGyX=sumGyX/20;  averGyY=sumGyY/20;  averGyZ=sumGyZ/20;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//블루투스 통신
+//아직 안끝남
+void checking() {
+  //led 켬
+  if(blue.available()>0){//들어온 명령이 있을 때
+    while (blue.available()>4){//여러명령이 들어왔을경우 마지막 명령만 실행
+      blue.read();
+    }
+    command=static_cast<int>(blue.read());
+    switch(command){
+      case 11://첫번째 종류의 운동(스쿼트) 시작
+      flag=true;
+      exercise=1;
+      break;
+      //case 12://두번째 종류의 운동 시작
+      //flag=ture;
+      //exercise=2;
+      //break;
+      case 2://멈추기
+      flag=false;
+      //측정중단함수
+      break;
+      default:
+      blue.println(99);
+    }
+  }
+    else{
+      blue.print("WC");
+      blue.flush();
+    }
+  
+  //led 끔
 }
