@@ -3,6 +3,7 @@ import 'package:myapp/MenuRow.dart';
 import '../component/squatsImage.dart';
 import '../component/dataInput.dart';
 import './exerciseSquats.dart';
+import 'package:flutter/widgets.dart';
 
 final baseTextStyle = const TextStyle(
   fontFamily: 'Poppins'
@@ -17,11 +18,70 @@ final regularTextStyle = baseTextStyle.copyWith(
   fontSize: 9.0,
   fontWeight: FontWeight.w400
 );
-final subHeaderTextStyle = regularTextStyle.copyWith(
-  fontSize: 15.0
-);
 
 
+
+
+class StartsSquats extends StatefulWidget{
+   @override
+    _StartsSquatsState createState() => _StartsSquatsState();
+     }
+
+class _StartsSquatsState extends State<StartsSquats> {
+   @override
+    Widget build(BuildContext context){
+    return Scaffold(
+      appBar: _buildReplaceAppBar(),
+      body: SingleChildScrollView(
+        child:  Padding(
+        padding: const EdgeInsets.symmetric(horizontal:20.0),
+        
+        child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          
+          SizedBox(
+            height: 30,
+          ),
+          
+          SquatsImage(),
+              DataInput(),
+
+
+          SizedBox(
+            height: 30,
+          ),
+          
+          Text("세트1 = $DataInput.setsInput"),
+          
+          
+          ElevatedButton(
+            onPressed: (){
+              Navigator.push(
+                context,
+                 MaterialPageRoute(builder: (context)=> ExerciseSquatsPage())
+                );
+              
+            },
+           child: Text("운동 시작하기"))
+        ],
+      ),
+      ),
+      
+      ),
+     
+    );
+    }
+    AppBar _buildReplaceAppBar() => AppBar(
+    //backgroundColor: Colors.white,
+    title: Text("Excercise Squats", style: TextStyle(color: Colors.white),),
+    centerTitle: true,
+    actions: [
+      //Icon(Icons.thumb_up_off_alt, color: Colors.black,),
+    ],
+  );
+ }
+/*
 class StartSquats extends StatelessWidget{
  // const StartSquats({Key? key}) : super(key: key);
 
@@ -77,7 +137,7 @@ class StartSquats extends StatelessWidget{
   );
 }
 
-
+*/
 
 /*
 class StartSquats extends StatelessWidget{

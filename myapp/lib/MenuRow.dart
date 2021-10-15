@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/detail/benchpressCard/BenchPressBeforeStart.dart';
 import 'package:myapp/detail/squatsCard/SquatsBeforeStart.dart';
+import 'package:myapp/motivation/page/motivation.dart';
 import 'alarmpage/alarmtest.dart';
 
 
@@ -211,12 +212,12 @@ final settingCardContent = Container(
     children: <Widget>[
       new Container(height:4.0),
       new Text(
-        'Setting',//여기
+        'Motivation',//여기
         style: headerTextStyle,
       ),
       new Container(height: 10.0,),
       new Text(
-        '#sensor #센서 설정',//여기
+        '#운동 동기를 자극',//여기
         style: subHeaderTextStyle,
       ),
       new Container(
@@ -496,7 +497,7 @@ class Setting extends StatelessWidget{
   margin: new EdgeInsets.symmetric(vertical: 16.0),
   alignment: FractionalOffset.centerLeft,
   child: new Image(
-    image: new AssetImage('assets/img/setting_icon.png' ),//여기
+    image: new AssetImage('assets/img/goal.png' ),//여기
     height: 92.0,
     width: 92.0,
   ),
@@ -537,7 +538,7 @@ final settingMenuCard = new Container(
       onTap:(){
         Navigator.push(
           context, 
-         MaterialPageRoute(builder: (context)=>SquatsPage()),
+         MaterialPageRoute(builder: (context)=>MotivationPage()),
          
         );
       }
