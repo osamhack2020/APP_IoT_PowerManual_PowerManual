@@ -17,7 +17,7 @@
  - 구성:  
        <img src="http://img2.tmon.kr/cdn3/deals/2021/03/24/5608094054/front_0face_ir3dm.jpg" width="400" height="400"/>  
        <팔 또는 다리에 착용할 수 있는 스트랩 형태 *[Tinkercad로 렌더링 예정]*>  
-   - 스트랩은 운동할 때 원래 부상방지, 힘 보조등의 이유로 많이 사용되는 만큼 운동할 때 사용자에게 크게 방해가 되지 않게끔 디자인 하였습니다.
+   - 스트랩은 운동할 때 원래 부상방지, 힘 보조등의 이유로 많이 사용되는 만큼 운동할 때 사용자에게 크게 방해가 되지 않는 디자인으로 선정하였습니다.
 
    <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/Images/PowermanualDevice.png?raw=true"/>
 
