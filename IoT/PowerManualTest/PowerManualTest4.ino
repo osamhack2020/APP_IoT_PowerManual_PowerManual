@@ -1,3 +1,5 @@
+// getAngle()에서 Serial.print가 disabled된 version
+
 #include<Wire.h>  // MPU6050과 I2C 통신을 위한 라이브러리
 #include<math.h>
 
@@ -387,17 +389,17 @@ void getAngle() {
   ***************************/
   //if(count==10){
   //Serial.print("X: ");
-  Serial.print(angleFiX);
-  Serial.print(" ");
+  //Serial.print(angleFiX);
+  //Serial.print(" ");
   //Serial.print("\t AngleAcY:");
   //Serial.print(angleAcY);
   //Serial.print(" Y: ");
-  Serial.print(angleFiY);
-  Serial.print(" ");
+  //Serial.print(angleFiY);
+  //Serial.print(" ");
   //Serial.print("\t AngleGyZ:");
   //Serial.print(angleGyZ);
   //Serial.print(" Z: ");
-  Serial.println(angleFiZ);
+  //Serial.println(angleFiZ);
   //count =0;
   //}
   //count++;
