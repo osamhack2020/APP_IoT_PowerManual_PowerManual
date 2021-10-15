@@ -122,7 +122,7 @@ Widget _getContent(){
             children: <Widget>[
               new Text(_overviewTitle, style: headerTextStyle,),
               new Separator(),
-              new Text("What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,  when an unknown printer took a galley of type and scrambled it to make a type specimen book.   It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",style: regularTextStyle,)
+              new Text("3대 운동 중 하나로 알려진 스쿼트는 가장 기본적인 하체 운동으로 허벅지의 대퇴사두근, 대둔근, 슬굴곡근 등을 사용하는 운동이다. 허벅지가 무릎과 수평이 될 때까지 앉았다 서는 동작을 기본으로 한다.\n 운동을 시작하기 전 운동방법에 대한 충분한 습득과 스트레칭을 통해 부상을 방지해야 한다. 영상을 시청하고 운동을 시작하는 것을 권장한다. \n기기를 양쪽 무릎 위 허벅지에 끼우고 운동을 시작하세요.",style: regularTextStyle,)
 
 
             ],

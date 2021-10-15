@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:myapp/Font.dart';
+import 'package:myapp/exercise/squats/page/startSquats.dart';
+import '../page/startSquats.dart';
 final baseTextStyle = const TextStyle(
   fontFamily: 'Poppins'
 );
@@ -8,13 +10,17 @@ final regularTextStyle = baseTextStyle.copyWith(
   fontSize: 9.0,
   fontWeight: FontWeight.w400
 );
-final subHeaderTextStyle = regularTextStyle.copyWith(
-  fontSize: 15.0
-);
+
+
+
 
 class DataInput extends StatelessWidget{
   @override
+  String weightInput="";
+  String setsInput="";
 
+final weightInputController=TextEditingController();
+final setsInputController=TextEditingController();
   Widget build(BuildContext context){
     return new Container(
       child: Column(
@@ -28,6 +34,8 @@ class DataInput extends StatelessWidget{
                   label: Text("Count", style: subHeaderTextStyle),
                   hintText: "다음 세트에 수행할 갯수를 입력하세요"
                 ),
+                onChanged: (val) => setsInput=val,
+                controller: weightInputController,
               ),
             
           
@@ -39,7 +47,12 @@ class DataInput extends StatelessWidget{
                   label: Text("Weight", style: subHeaderTextStyle),
                   hintText: "다음 세트에 수행할 무게를 입력하세요"
                 ),
+                onChanged: (val) => weightInput=val,
+                controller: setsInputController,
               ),
+              Text("무게는 : ${weightInputController.text} 혹은 $weightInput"),
+              Text("세트는 : ${setsInputController.text} 혹은 $setsInput"),
+              
             ],
           
         
