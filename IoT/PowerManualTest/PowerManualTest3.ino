@@ -1,3 +1,5 @@
+//스쿼트자세 측정완료
+
 #include<Wire.h>  // MPU6050과 I2C 통신을 위한 라이브러리
 #include<math.h>
 
