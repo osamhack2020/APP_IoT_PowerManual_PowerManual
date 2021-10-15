@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/Font.dart';
 import 'package:myapp/HomePage.dart';
+import 'package:myapp/detail/youtubelink/HowToBenchPressYoutube.dart';
 import 'package:myapp/exercise/benchPress/component/benchPressCount.dart';
 final KorBlackHeaderStyle= KorHeaderStyle.copyWith(
   color: Colors.black,
@@ -30,10 +31,10 @@ class FinalBenchPress extends StatelessWidget{
             children: [
               
               ClipRRect(
-          borderRadius: BorderRadius.circular(40.0),
+          borderRadius: BorderRadius.circular(80.0),
         
           child: Image.asset(
-             "assets/img/stimulation/stimulation1.jpg",
+             "assets/img/stimulation1.jpg",
               width: 400,
               height: 200,
               fit: BoxFit.fill,
@@ -99,8 +100,9 @@ class FinalBenchPress extends StatelessWidget{
                  MaterialPageRoute(builder: (context)=> HomePage())
               );
             },
-                 child: Text("시작화면으로", style: KorHeaderStyle,))
-               
+                 child: Text("시작화면으로", style: KorHeaderStyle,)),
+               //YoutubeModel(id: id, youtubeId: youtubeId)
+
             
             ],
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/Font.dart';
+import './dataInput.dart';
 
 class WeightSetCount extends StatelessWidget{
   @override
@@ -23,7 +24,7 @@ class WeightSetCount extends StatelessWidget{
            
               Text('갯수:', style: KorTextStyle,),
               SizedBox(width: 10,),
-              Text('xx', style: headerTextStyle,),
+              Text('XX', style: headerTextStyle,),
               SizedBox(width: 3,),
               Text('SETS', style: subHeaderTextStyle,)
             

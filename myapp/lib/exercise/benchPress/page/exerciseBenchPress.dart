@@ -1,6 +1,7 @@
 //import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:myapp/exercise/benchPress/component/exerciseBenchPressPageButton%20copy.dart';
 import 'package:myapp/exercise/squats/component/exercisePageButton.dart';
 import '../component/benchPressJudgementImage.dart';
 import '../component/weightSetCount.dart';
@@ -26,7 +27,7 @@ class _ExerciseBenchPressPageState extends State<ExerciseBenchPressPage> {
                SizedBox(height: 7,),
                BenchPressCount(),
                SizedBox(height: 15,),
-               ExercisePageButoon(),
+               ExerciseBenchPressPageButoon(),
              ],
            ),
           ),

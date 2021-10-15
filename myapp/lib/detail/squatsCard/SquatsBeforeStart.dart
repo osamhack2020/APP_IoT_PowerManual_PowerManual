@@ -91,6 +91,6 @@ List _widgetOptions = [
     SquatsStrechingYoutubePlayerDemo(title: "Squats Streching",),
     HowtoSquatsYoutubePlayerDemo(title: "How to Squats"),
     replaceSquatsPage(),
-    StartSquats(),
+    StartsSquats(),
   ];
 }

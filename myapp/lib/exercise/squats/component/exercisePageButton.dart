@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:myapp/Font.dart';
+import 'package:myapp/exercise/squats/page/errorPage.dart';
 import '../page/afterSquats.dart';
 class ExercisePageButoon extends StatelessWidget{
   @override
@@ -15,10 +16,10 @@ class ExercisePageButoon extends StatelessWidget{
         children: [
            ElevatedButton(
             onPressed: (){
-              /*Navigator.push(
+              Navigator.push(
                 context,
-                 MaterialPageRoute(builder: (context)=> ()))
-               );*/
+                 MaterialPageRoute(builder: (context)=> SquatsErrorPage()));
+               
             },
            child: Text("자세 설명 보기", style: KorHeaderStyle,)
            ),

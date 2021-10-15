@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/detail/squatsCard/SquatsBeforeStart.dart';
 import 'package:myapp/detail/youtubelink/SquatsStrechingYoutube.dart';
 import 'package:myapp/exercise/squats/page/startSquats.dart';
+import 'package:myapp/motivation/page/motivation.dart';
 import './HomePage.dart';
 import 'package:android_alarm_manager/android_alarm_manager.dart';
 
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget{
      theme: new ThemeData(scaffoldBackgroundColor: const Color(0xFF736AB7)),
     
      home: new HomePage(),
-    // home: new StartSquats(),
+    //home: new MotivationPage(),
     );
   }
 }
