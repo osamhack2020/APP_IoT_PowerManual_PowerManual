@@ -21,19 +21,19 @@
 
    <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/Images/PowerManualDevice.png?raw=true"/>
 
-   1. 슬라이드 스위치: 디바이스의 전원을 on/off 합니다.  
-   2. 미니 푸시버튼: 3초간 누르고 나면 PowerManual앱을 사용할 블루투스 기기를 검색합니다.  
-   3. Green LED: 디바이스의 전원이 on이면 초록불이, off면 꺼집니다.  
-   4. RGB LED: 블루투스 기기와 연결되어 있지 않으면 빨간불, 연결 중이면 노란불, 연결상태면 초록불이 켜집니다.   
-   5. RGB LED: 앱에서 운동시작 버튼을 누르면 준비자세를 취할 때까지 노란불이 켜지며 2초간 준비자세를 유지하면 초록불로 바뀌면서 운동시작을 나타냅니다. 운동중 자세가 잘못되면 빨간불로 알려줍니다.  
-   6. 내부 충전모듈 LED: 충전중일때는 빨간불이 켜지며 충전이 완료되면 파란불이 켜집니다.  
-   7. 내부 충전모듈 USB 단자: USB충전을 위한 단자가 달려있습니다.  
+   1. 슬라이드 스위치: 디바이스의 전원을 on/off 합니다.   
+   2. 내부 MCU LED: 디바이스의 전원이 on이면 초록불이, off면 꺼집니다.  
+   3. 내부 블루투스 모듈 LED: 블루투스 기기와 연결되어 있지 않으면 빨간불, 연결 중이면 노란불, 연결상태면 초록불이 켜집니다.   
+   4. RGB LED: 앱에서 운동시작 버튼을 누르면 준비자세를 취할 때까지 노란불이 켜지며 준비자세를 유지하면 초록불로 바뀌면서 2초후 운동시작을 나타냅니다. 운동중 자세가 잘못되면 빨간불로 알려줍니다.  
+   5. 내부 충전 모듈 LED: 충전중일때는 빨간불이 켜지며 충전이 완료되면 파란불이 켜집니다.  
+   6. 내부 충전 모듈 USB 단자: USB충전을 위한 단자가 달려있습니다.  
 
  - 디바이스 내부:  
    <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/Images/PowerManualDeviceConfig.png?raw=true"/> 
 
  - 내부 회로도:  
-   <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/IoT/PowerManual_bb.png?raw=true"/>
+   <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/IoT/PowerManual_bb.png?raw=true"/>  
+   => 이미지 수정하기
 
    
 
