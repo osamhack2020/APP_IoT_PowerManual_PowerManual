@@ -52,7 +52,7 @@ class _StartsSquatsState extends State<StartsSquats> {
             height: 30,
           ),
           
-          Text("세트1 = $DataInput.setsInput"),
+          //Text("세트1 = $DataInput.setsInput"),
           
           
           ElevatedButton(

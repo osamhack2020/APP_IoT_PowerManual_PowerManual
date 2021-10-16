@@ -53,11 +53,11 @@ class _SquatsCountState extends State<SquatsCount> {
                  
                  Text("가동범위부족", style: KorTextStyle,),
                  SizedBox(width: 7,),
-                 Text("5", style: wrongHeaderTextStyle,),
+                 Text("1", style: wrongHeaderTextStyle,),
                  SizedBox(width: 15,),
                  Text("무릎각도부적절", style: KorTextStyle),
                  SizedBox(width: 7,),
-                 Text("5", style: wrongHeaderTextStyle,),
+                 Text("0", style: wrongHeaderTextStyle,),
                  
                  
                  
@@ -70,11 +70,11 @@ class _SquatsCountState extends State<SquatsCount> {
                 
                  Text("무릎위치조절", style: KorTextStyle),
                  SizedBox(width: 7,),
-                 Text("5", style: wrongHeaderTextStyle,),
+                 Text("1", style: wrongHeaderTextStyle,),
                  SizedBox(width: 15,),
                  Text("추가자세문제", style: KorTextStyle),
                  SizedBox(width: 7,),
-                 Text("5", style: wrongHeaderTextStyle,),
+                 Text("0", style: wrongHeaderTextStyle,),
                ],
              )
            ],
