@@ -37,8 +37,14 @@
 
    
 
-### APP
- - 설명 기입 
+## APP
+
+### 시작화면  
+   <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/myapp/mdImg/시작화면.png?raw=true" width="200" height="350"/>
+### 스쿼트 시작화면
+   | <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/myapp/mdImg/스쿼트 info.png?raw=true" width="200" height="350"/> | <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/myapp/mdImg/스쿼트 stretching.png?raw=true" width="200" height="350"/> |
+|--|--|
+    
 
 ## 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
 * ECMAScript 6 지원 브라우저 사용
