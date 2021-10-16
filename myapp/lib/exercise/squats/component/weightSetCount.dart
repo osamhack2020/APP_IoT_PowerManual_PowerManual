@@ -15,7 +15,7 @@ class WeightSetCount extends StatelessWidget{
            
               Text('무게:', style: KorTextStyle,),
               SizedBox(width: 10,),
-              Text('xx', style: headerTextStyle,),
+              Text('60', style: headerTextStyle,),
               SizedBox(width: 3,),
               Text('KG', style: subHeaderTextStyle,),
             
@@ -24,7 +24,7 @@ class WeightSetCount extends StatelessWidget{
            
               Text('갯수:', style: KorTextStyle,),
               SizedBox(width: 10,),
-              Text('XX', style: headerTextStyle,),
+              Text('12', style: headerTextStyle,),
               SizedBox(width: 3,),
               Text('SETS', style: subHeaderTextStyle,)
             
