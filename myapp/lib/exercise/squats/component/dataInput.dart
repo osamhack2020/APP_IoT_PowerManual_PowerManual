@@ -50,8 +50,8 @@ final setsInputController=TextEditingController();
                 onChanged: (val) => weightInput=val,
                 controller: setsInputController,
               ),
-              Text("무게는 : ${weightInputController.text} 혹은 $weightInput"),
-              Text("세트는 : ${setsInputController.text} 혹은 $setsInput"),
+              //Text("무게는 : ${weightInputController.text} 혹은 $weightInput"),
+              //Text("세트는 : ${setsInputController.text} 혹은 $setsInput"),
               
             ],
           

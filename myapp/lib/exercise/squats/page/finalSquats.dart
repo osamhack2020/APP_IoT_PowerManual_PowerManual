@@ -29,8 +29,9 @@ class FinalSquats extends StatelessWidget{
         child: SingleChildScrollView(
           child: Column(
             children: [
-              
-              ClipRRect(
+              Text("운동 종료", style: KorHeaderStyle,),
+              SizedBox(height: 10,)      ,
+                      ClipRRect(
           borderRadius: BorderRadius.circular(80.0),
         
           child: Image.asset(
