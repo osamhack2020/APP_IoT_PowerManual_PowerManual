@@ -7,7 +7,6 @@
 #include <SoftwareSerial.h>
 #include <MsTimer2.h>//인터럽트를 위한 라이브러리
 SoftwareSerial blue(2,3);
-int command=0;
 boolean flag=false;
 
 const int MPU_ADDR = 0x68;    // I2C통신을 위한 MPU6050의 주소
@@ -545,35 +544,30 @@ void caliSensor() {
 
 
 //블루투스 통신
-//아직 안끝남
+//아직 안끝남2
+int command='p';
 void checking() {
   //led 켬
   if(blue.available()>0){//들어온 명령이 있을 때
     while (blue.available()>4){//여러명령이 들어왔을경우 마지막 명령만 실행
       blue.read();
     }
-    command=static_cast<int>(blue.read());
-    switch(command){
-      case 11://첫번째 종류의 운동(스쿼트) 시작
-      flag=true;
-      exercise=1;
-      break;
-      //case 12://두번째 종류의 운동 시작
-      //flag=ture;
-      //exercise=2;
-      //break;
-      case 2://멈추기
-      flag=false;
-      //측정중단함수
-      break;
-      default:
-      blue.println(99);
+    command=blue.read();
+    if (command=='E'){
+      command=blue.read();
+      if ((48<command) && (command<50)){//0의 아스키 코드 48 2의 아스키코드 50
+        exercise=command-48;
+      }else{
+        blue.print("WC");
+        return;
+      }
     }
-  }
-    else{
-      blue.print("WC");
+    else if(command=='S'){
+      flag=0;
+      //운동중단
       blue.flush();
     }
+  }else{}//led깜빡이기
   
   //led 끔
 }
