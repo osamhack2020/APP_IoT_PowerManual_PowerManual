@@ -33,7 +33,6 @@
 
  - 내부 회로도:  
    <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/IoT/device/PowerManualDevice_bb.png?raw=true"/>  
-   => 이미지 수정하기
 
    
 
