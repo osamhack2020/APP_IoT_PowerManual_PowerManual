@@ -5,7 +5,7 @@
 * [대본]()
 
 # 시연 영상
-* [전원스위치영상](https://youtu.be/WfiH2D07mYg)
+* [전원스위치와 LED 영상](https://youtu.be/WfiH2D07mYg)
 * [기기등록영상]()
 * [기기반납영상]()
 * [TOTP시연영상]()
