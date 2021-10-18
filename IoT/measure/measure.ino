@@ -544,8 +544,8 @@ void caliSensor() {
 
 
 //블루투스 통신
-//아직 안끝남2
 int command='p';
+int command2='p';
 void checking() {
   //led 켬
   if(blue.available()>0){//들어온 명령이 있을 때
@@ -555,9 +555,18 @@ void checking() {
     command=blue.read();
     if (command=='E'){
       command=blue.read();
-      if ((48<command) && (command<50)){//0의 아스키 코드 48 2의 아스키코드 50
-        exercise=command-48;
+      if (('0'<command) && (command<'2')){//0의 아스키 코드 48 2의 아스키코드 50
+        exercise=command-'0';
       }else{
+        blue.print("WC");
+        return;
+      }
+      command=blue.read();
+      command2=blue.read();
+      if ('0'<=command && command<='9' && '0'<=command2 && command2<='9'){
+        reps=(command-'0')*10+command2-'0';
+      }
+      else{
         blue.print("WC");
         return;
       }
