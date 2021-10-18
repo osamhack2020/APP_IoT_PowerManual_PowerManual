@@ -35,7 +35,7 @@
 
 시연 구성:
 1. 전원스위치, 전원 LED, 운동상태 LED: https://www.tinkercad.com/things/6TsqGjZfOjW
-2. 가속도센서와 운동상태 LED
+2. 가속도센서와 운동상태 LED: 
 3. 스쿼트시연
 
 
