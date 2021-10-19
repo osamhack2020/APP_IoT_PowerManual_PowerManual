@@ -458,6 +458,7 @@ void checking() {
         exercise=command-'0';
       }else{
         blue.print("WC");
+        newflush();
         return;
       }
       command=blue.read();//개수 십의자리
@@ -468,17 +469,18 @@ void checking() {
       }
       else{
         blue.print("WC");
+        newflush();
         return;
       }
     }
     else if(command=='S'){
       flag=0;
       //운동중단
-      blue.flush();
+      newflush();
     }
     else{
       blue.print("WC");
-      blue.flush();
+      newflush();
     }
   }else{}
   if(!flag){//운동중이 아니라면 led가 파란색으로 깜빡임
@@ -493,5 +495,10 @@ void checking() {
     blueflag= (!blueflag);
 
     
+  }
+}
+void newflush(){
+  while (blue.available()>0){
+    blue.read();
   }
 }
