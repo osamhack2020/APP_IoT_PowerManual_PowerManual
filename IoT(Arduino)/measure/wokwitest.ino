@@ -1,6 +1,6 @@
 //시연을 위해 블루투스통신을 Serial로 대체
 //이 시뮬레이터에서 serial 입력시 \n 개행문자가 까지 입력되어 관련 부분을 수정함
-https://wokwi.com/arduino/projects/312956629009039936
+//https://wokwi.com/arduino/projects/312956629009039936
 #include<Wire.h>  // MPU6050과 I2C 통신을 위한 라이브러리
 #include<math.h>
 
