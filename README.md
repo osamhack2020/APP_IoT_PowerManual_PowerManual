@@ -15,7 +15,7 @@
        <팔 또는 다리에 착용할 수 있는 스트랩 형태 *[Tinkercad로 렌더링 예정]*>  
    - 스트랩은 운동할 때 원래 부상방지, 힘 보조등의 이유로 많이 사용되는 만큼 운동할 때 사용자에게 크게 방해가 되지 않는 디자인으로 선정하였습니다.
 
-   <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/IoT/device/PowerManualDevice.png?raw=true" />
+   <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/IoT(Arduino)/device/PowerManualDevice.png?raw=true" />
 
    1. 슬라이드 스위치: 디바이스의 전원을 on/off 합니다.   
    2. 내부 MCU LED: 디바이스의 전원이 on이면 초록불이, off면 꺼집니다.  
@@ -31,7 +31,8 @@
    <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/IoT(Arduino)/device/PowerManualDevice_bb.png?raw=true"/>  
 
 ## 테스트 모듈 착용 이미지
-
+- 스쿼트 시연시 아래와 같이 허벅지에 착용함
+<img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/Images/%EC%B0%A9%EC%9A%A9%EC%82%AC%EC%A7%841.png?raw=true"/>
 
 ## 시연 영상
 * [전원스위치와 LED 시뮬레이션](https://youtu.be/p0WgclJNXeo)
