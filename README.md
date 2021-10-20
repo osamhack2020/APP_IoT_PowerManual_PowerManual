@@ -53,12 +53,12 @@
 <!--## 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
 * ECMAScript 6 지원 브라우저 사용
 * 권장: Google Chrome 버젼 77 이상
-
+-->
 ## 기술 스택 (Technique Used) 
 ### APP
  - Flutter 프레임워크
  - 사용라이브러리: cupertino_icons, youtube_player_iframe, flutter_blue
--->
+
 
 ### Arduino
  -  MsTimer2
