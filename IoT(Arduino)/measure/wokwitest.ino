@@ -1,4 +1,6 @@
 //시연을 위해 블루투스통신을 Serial로 대체
+//이 시뮬레이터에서 serial 입력시 \n 개행문자가 까지 입력되어 관련 부분을 수정함
+https://wokwi.com/arduino/projects/312956629009039936
 #include<Wire.h>  // MPU6050과 I2C 통신을 위한 라이브러리
 #include<math.h>
 
@@ -104,6 +106,7 @@ void measureSquart() {
     unsigned long past2 = 0;  // 시간 저장용 변수들2
     //Serial.println("시작자세를 취해주세요");  // 똑바로 선 자세, 센서는 허벅지 앞쪽 중앙, 무릎 위쪽에 X축이 하늘을 바라보게
     Serial.println("S1");
+    unsigned long past3=millis();
     while(!correctStart){
       if(!flag){
         return;
@@ -111,7 +114,12 @@ void measureSquart() {
       color = 2;
       setColor1(color);  // 운동상태 LED를 노란색으로 설정
       //Serial.println("...");
-      Serial.println("SW");
+      if (millis()-past3>1000){
+        Serial.println("SW");
+        past3=millis();
+
+      }
+      
       getAngle();  //현재 신체 모션 감지
       correctStart = (angleFiY > (correctY1 - 10)) && (angleFiY < (correctY1 + 10));  //올바른 시작 자세에 있는지 판단
       if(correctStart) {  //올바른 시작 차세를 취하기 시작하면
@@ -445,9 +453,8 @@ int command='p';
 int command2='p';
 boolean blueflag=false;
 void checking() {
-  //led 켬
   if(Serial.available()>0){//들어온 명령이 있을 때
-    while (Serial.available()>4){//여러명령이 들어왔을경우 마지막 명령만 실행
+    while (Serial.available()>5){//여러명령이 들어왔을경우 마지막 명령만 실행 wokwi에서는  \n까지 전송되어 개행문자를 포함해 5개를 받음
       Serial.read();
     }
     command=Serial.read();
@@ -481,8 +488,9 @@ void checking() {
       Serial.println("WC");
       newflush();
     }
-  }else{}
-  if(!flag){
+  }else{newflush();}
+  newflush();
+  if(!flag){//운동중이 아니라면 파란색으로 깜빡임
     analogWrite(redPin1, 0);
     analogWrite(greenPin1, 0);
     if (blueflag){
@@ -501,79 +509,3 @@ void newflush(){
     Serial.read();
   }
 }
-
-
-
-
-/**
- * // C++ code
-//
-int dfsdf = 0;
-boolean flag=true;
-int exercise=1;
-int reps=0;
-void setup()
-{
-  Serial.begin(9600);
-
-  pinMode(LED_BUILTIN, OUTPUT);
-}
-
-void loop()
-{
-  Serial.println(reps);
-  Serial.println(exercise);
-  checking();
-  delay(1000);
-  
-}
-
-int command='p';
-int command2='p';
-boolean blueflag=false;
-void checking() {
-  //led 켬
-  if(Serial.available()>0){//들어온 명령이 있을 때
-    while (Serial.available()>4){//여러명령이 들어왔을경우 마지막 명령만 실행
-      Serial.read();
-    }
-    command=Serial.read();
-    if (command=='E'){//운동시작
-      command=Serial.read();
-      if (('0'<command) && (command<'2')){//운동 종류 판단 현재는 1개 만 있으므로 0<command<2
-        exercise=command-'0';
-      }else{
-        Serial.println("WC");
-        Serial.flush();
-        return;
-      }
-      command=Serial.read();//개수 십의자리
-      command2=Serial.read();//일의자리
-      if ('0'<=command && command<='9' && '0'<=command2 && command2<='9'){//
-        reps=(command-'0')*10+command2-'0';
-        flag=true;//운동시작
-      }
-      else{
-        Serial.println("WC");
-        Serial.flush();
-        return;
-      }
-    }
-    else if(command=='S'){
-      flag=0;
-      //운동중단
-      Serial.flush();
-    }
-    else{
-      Serial.println("WC");
-      Serial.flush();
-    }
-}
-}
- */
-
-
-
-
- //시뮬레이터에서 serial 통신이 제대로 안되는듯
- //https://wokwi.com/arduino/projects/312891477608890944
