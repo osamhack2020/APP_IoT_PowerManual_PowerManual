@@ -1,8 +1,5 @@
 # PPT
-* [발표자료 (PDF)]()
 * [발표자료 (PPTX)]()
-* [발표자료 (PPSX)]()
-* [대본]()
 
 # 시연 영상
 * [전원스위치와 LED 시뮬레이션](https://youtu.be/p0WgclJNXeo)
