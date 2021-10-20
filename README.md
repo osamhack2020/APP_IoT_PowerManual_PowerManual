@@ -57,9 +57,8 @@
 
 ## 설치 안내 (Installation Process)
 ```bash
-$ git clone git주소
-$ yarn or npm install
-$ yarn start or npm run start
+$ flutter build apk
+$ flutter run -d web-server --web-hostname=0.0.0.0
 ```
 <!--
 ## 프로젝트 사용법 (Getting Started)
