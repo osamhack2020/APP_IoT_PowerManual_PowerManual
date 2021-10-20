@@ -47,15 +47,10 @@
 * 권장: Google Chrome 버젼 77 이상
 
 ## 기술 스택 (Technique Used) 
-### Server(back-end)
- -  nodejs, php, java 등 서버 언어 버전 
- - express, laravel, sptring boot 등 사용한 프레임워크 
- - DB 등 사용한 다른 프로그램 
- 
-### Front-end
- -  react.js, vue.js 등 사용한 front-end 프레임워크 
- -  UI framework
- - 기타 사용한 라이브러리
+### APP
+ - Flutter 프레임워크
+ - 사용라이브러리: cupertino_icons, youtube_player_iframe, flutter_blue
+
 
 ### Arduino
  -  MsTimer2
@@ -66,7 +61,7 @@ $ git clone git주소
 $ yarn or npm install
 $ yarn start or npm run start
 ```
-
+<!--
 ## 프로젝트 사용법 (Getting Started)
 **마크다운 문법을 이용하여 자유롭게 기재**
 
@@ -76,6 +71,7 @@ $ yarn start or npm run start
 
  편한 마크다운 에디터를 찾아서 사용
  샘플 에디터 [https://stackedit.io/app#](https://stackedit.io/app#)
+-->
  
 ## 팀 정보 (Team Information)
 - YeChan Lee (tuuktuc86@hanmail.net), Github Id: tuuktuc86
