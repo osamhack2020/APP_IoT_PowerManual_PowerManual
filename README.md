@@ -25,10 +25,10 @@
    6. 내부 충전 모듈 USB 단자: USB충전을 위한 단자가 달려있습니다.  
 
  - 디바이스 내부:  
-   <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/IoT/device/PowerManualDeviceConfig.png?raw=true"/> 
+   <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/IoT(Arduino)/device/PowerManualDeviceConfig.png?raw=true"/> 
 
  - 내부 회로도:  
-   <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/IoT/device/PowerManualDevice_bb.png?raw=true"/>  
+   <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/IoT(Arduino)/device/PowerManualDevice_bb.png?raw=true"/>  
 
    
 

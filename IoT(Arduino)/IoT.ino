@@ -105,14 +105,18 @@ void measureSquart() {
     unsigned long past2 = 0;  // 시간 저장용 변수들2
     Serial.println("시작자세를 취해주세요");  // 똑바로 선 자세, 센서는 허벅지 앞쪽 중앙, 무릎 위쪽에 X축이 하늘을 바라보게
     blue.print("S1");
+    unsigned long past3=millis();
     while(!correctStart){
       if(!flag){
         return;
       }
       color = 2;
       setColor1(color);  // 운동상태 LED를 노란색으로 설정
-      Serial.println("...");
-      blue.print("SW");
+      if (millis()-past3>1000){
+        Serial.println("...");
+        blue.print("SW");
+      }
+
       getAngle();  //현재 신체 모션 감지
       correctStart = (angleFiY > (correctY1 - 10)) && (angleFiY < (correctY1 + 10));  //올바른 시작 자세에 있는지 판단
       if(correctStart) {  //올바른 시작 차세를 취하기 시작하면
