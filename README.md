@@ -42,7 +42,7 @@
 | <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/myapp/mdImg/벤치프레스 replace.png?raw=true" width="200" height="350"/> </br> 벤치프레스 대체운동 | <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/myapp/mdImg/벤치프레스 beforeStart.png?raw=true" width="200" height="350"/> </br> 벤치프레스 운동시작  |  <img src="https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/blob/main/myapp/mdImg/motivation.png?raw=true" width="200" height="350"/> </br> 운동자극 글귀 |   |
     
 
-## 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
+<!--## 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
 * ECMAScript 6 지원 브라우저 사용
 * 권장: Google Chrome 버젼 77 이상
 
@@ -50,7 +50,7 @@
 ### APP
  - Flutter 프레임워크
  - 사용라이브러리: cupertino_icons, youtube_player_iframe, flutter_blue
-
+-->
 
 ### Arduino
  -  MsTimer2
