@@ -39,5 +39,6 @@
 2. 가속도센서와 운동상태 LED: 
 3. 스쿼트시연
 
-
-
+[bluetooth 통신이 serial 통신으로 대체된 데모](https://wokwi.com/arduino/projects/312956629009039936)
+\
+[통신 명령어](https://github.com/osamhack2021/APP_IoT_PowerManual_PowerManual/tree/main/IoT(Arduino)/bluetooth)
